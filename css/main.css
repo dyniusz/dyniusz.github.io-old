@@ -8,6 +8,12 @@ body {
   border-top: 4px solid #556270;
 }
 
+ h1 {
+  margin: 0 0 -20px 0;
+  font-size: 20px;
+  border: none;
+}
+
 strong {
   font-weight: bold;
 }
