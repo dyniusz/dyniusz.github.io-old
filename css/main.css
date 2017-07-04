@@ -1,3 +1,224 @@
+/*----------------------------------------------------------------------------
+  Global Reset
+----------------------------------------------------------------------------*/
+
+* {
+  padding:0;
+  margin:0;
+}
+h1, h2, h3, h4, h5, h6, p, pre, blockquote, label, ul, ol, dl, fieldset, address { margin:1em 0; }
+li, dd { margin-left:5%; }
+fieldset { padding: .5em; }
+select option{ padding:0 5px; }
+
+.access{ display:none; } /* For accessibility related elements */
+.clear{ clear:both; height:0px; font-size:0px; line-height:0px; overflow:hidden; }
+a{ outline:none; }
+a img{ border:none; }
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+* html .clearfix { height: 1%; }
+.clearfix { display:inline-block; }
+.clearfix { display: block; }
+
+/*----------------------------------------------------------------------------
+  Main Layout
+----------------------------------------------------------------------------*/
+
+body {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 17px;
+  line-height: 1.4;
+  color: #333;
+  text-shadow: 0 1px 0 rgba(255,255,255,1.0);
+  border-top: 4px solid #556270;
+}
+
+strong {
+  font-weight: bold;
+}
+
+a {
+  color: #2382c8;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+hr {
+  margin: 20px 0 25px 0;
+  text-align: center;
+  letter-spacing: 3px;
+  font-size: 20px;
+  color: #ddd;
+  border: none;
+}
+hr:before {
+  content: '\2022 \2022 \2022 \2022 \2022';
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1080px;
+  padding: 0 20px;
+}
+
+.header-container {
+  margin: 0 auto;
+  max-width: 1080px;
+  padding: 0 20px;
+}
+
+header {
+  margin: 0 0 20px 0;
+  text-align: right;
+}
+
+ul.nav {
+  background-color: #eee;
+  margin: 0;
+  padding: 12px 0 10px 0;
+  list-style-type: none;
+  line-height: 30px;
+}
+ul.nav li {
+  margin: 0 20px;
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 300;
+}
+@media only screen and (max-width: 520px) {
+  ul.nav {
+    position: relative;
+    padding-top: 40px;
+  }
+  ul.nav li {
+    margin: 0 4px;
+    font-size: 13px;
+  }
+  ul.nav li.logo {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    margin-left: -14px;
+  }
+}
+ul.nav li a {
+  color: #000;
+  text-decoration: none;
+  font-weight: lighter;
+}
+
+ul.nav li.logo {
+  text-transform: none;
+}
+ul.nav li.logo a {
+  position: relative;
+  top: -2px;
+  display: inline-block;
+  width: 27px;
+  height: 27px;
+  line-height: 26px;
+  color: #fff;
+  font-weight: bold;
+  background: #556270;
+  border-radius: 100px;
+  box-shadow: 0 1px 0 rgba(255,255,255,1.0);
+}
+
+/*------------------------------------------------------------------------------
+  Home Page
+------------------------------------------------------------------------------*/
+
+.listing .post {
+  margin: 60px 0;
+}
+.listing .post:first-child {
+  margin-top: 22px;
+}
+
+.listing .post p.date {
+  font-size: 14px;
+  color: #bbb;
+}
+
+.listing .post h2 {
+  margin: 0 0 -20px 0;
+  font-size: 30px;
+  border: none;
+}
+
+.listing .post h2 a {
+  color: #55acee;
+  text-decoration: none;
+}
+
+.listing .post .post-summary {
+  font-size: 20px;
+  color: #777;
+}
+
+.listing .post.other {
+  color: #666;
+  /*border-left: 1px solid #ddd;*/
+}
+.listing .post.other h2 {
+  margin: -5px 0 -15px 0;
+  font-size: 21px;
+  font-weight: lighter;
+}
+.listing .post.other h2 a {
+  color: #55acee;
+}
+.listing .post.other p:last-child {
+  margin-bottom: 0;
+}
+
+.listing .post.other .icon {
+ font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  float: left;
+  margin-top: -3px;
+  margin-left: -35px;
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+  color: #ddd;
+}
+.listing .post.other .icon:hover {
+  text-decoration: none;
+  color: #bbb;
+}
+
+.listing blockquote {
+  border-left-color: #ddd;
+}
+
+@media only screen and (max-width: 520px) {
+  .listing .post {
+    margin: 30px 0;
+  }
+
+  .listing .post h2 {
+    font-size: 24px;
+  }
+
+  .listing .post .post-summary {
+    font-size: 18px;
+  }
+}
+
+/*------------------------------------------------------------------------------
+  Post Styles
+------------------------------------------------------------------------------*/
+
 p.date {
   color: #aaa;
   margin: 20px 0 0 0;
@@ -164,4 +385,101 @@ img {
 p > a > img {
   max-width: 100%;
 }
+/*----------------------------------------------------------------------------
+  Follow Box
+----------------------------------------------------------------------------*/
 
+.keep-in-touch {
+  text-align: right;
+  margin: 30px 0;
+  border-top: 1px solid #dfe4ea;
+}
+.keep-in-touch p:first-child {
+  margin-top: 0;
+  padding-top: 20px;
+  border-top: 1px solid #fff;
+}
+.keep-in-touch a {
+  color: #55acee;
+}
+
+.post-date {
+  font-size: 14px;
+}
+
+@media only screen and (max-width: 520px) {
+  .keep-in-touch {
+    font-size: 14px;
+  }
+}
+
+/*----------------------------------------------------------------------------
+  Code Styles
+----------------------------------------------------------------------------*/
+
+pre {
+  margin: 16px 0;
+  padding: 10px;
+  color: #444;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  border-radius: 4px;
+  overflow: auto;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+code{
+  padding: 0 4px;
+  font-family: "Source Code Pro", "Courier New", Courier, sans-serif;
+  font-size: 0.9em;
+  color: #556270;
+  background: #F4FAFF;
+  border-radius: 3px;
+}
+pre code {
+  padding: 0;
+  color: inherit;
+  background: inherit;
+  border-radius: 0;
+}
+code span.global {
+  color: #3388DD;
+}
+code span.brackets {
+  color: #777777;
+}
+code span.string {
+  color: #BC6710;
+}
+code span.symbol, code span.selectors {
+  color: #1199EE;
+}
+code span.properties {
+  color: #BB4411;
+}
+code span.keywords {
+  color: #44BB22;
+}
+code span.comment {
+  color: #BCBCBC;
+}
+code span.shell {
+  background:#f1f1f1;
+}
+
+code.html span.tag, code.xaml span.tag {
+  color: #BB4411;
+}
+code.html span.attribute, code.xaml span.attribute {
+  color: #44BB22;
+}
+code.html span.string, code.xaml span.string {
+  color: blue;
+}
+code.html span.comment, code.xaml span.comment {
+  color: #999999;
+}
+code.html span.doctype {
+  color: #D7FF80;
+}
+
+/* @end */
